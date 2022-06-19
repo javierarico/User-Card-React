@@ -1,50 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import profilePic from './images/profile-pic-javiera.JPEG'
+import profilePic from './images/javiera.jpeg'
 
 const stylesProfilePic = {
   width:'150px',
   height: '150px',
-  borderRadius: '150px'
+  borderRadius: '150px',
 };
 
-const imgProfile = <img src={profilePic} style={stylesProfilePic}/>;
-const title = <h1>Javiera Rico <i class='fa-solid fa-circle-check' style={{color: '#72dbd3'}}></i></h1>;
+const imgProfile = <img src={profilePic} style={stylesProfilePic} alt='user profile pic'/>;
+const title = <h1 style={{fontSize: '120%', fontFamily: 'Rubik, sans-serif'}}>Javiera Rico <i className='fa-solid fa-circle-check' style={{color: '#72dbd3'}}></i></h1>;
 //const verifiedIcon
-const txt = <p>Web Developer, Argentina</p>;
+const txt = <p style={{fontSize: '80%', fontFamily: 'Rubik, sans-serif'}}>Front End Web Developer, Argentina</p>;
 
 const header = (
-  <div class='headerWrapper'>
+  <div className='headerWrapper'>
     {imgProfile}
     {title}
     {txt}
   </div>
 );
 
-const skillsTxt = <h4>SKILLS</h4>;
-const techs = ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'React', 'NodeJS', 'Git', 'GitHub', 'NPM'];
+const skillsTxt = <h4 style={{fontSize: '90%', fontFamily: 'Rubik, sans-serif'}}>SKILLS</h4>;
+const techs = ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'JQuery', 'React', 'NodeJS', 'GSAP', 'Git', 'GitHub', 'NPM', 'Google Web Designer', 'Photoshop'];
 
 const buttonStyles = {
   border: 'none',
   backgroundColor: '#72dbd3',
-  padding: '1%',
+  padding: '.7%',
+  fontSize: '70%',
   color: '#ffffff',
-  borderRadius: '5px'
+  borderRadius: '5px',
+  fontFamily: 'Rubik, sans-serif',
 }
 
 const techsFormatted = techs.map((tech)=><button key={tech} style={buttonStyles}>{tech}</button>)
-const joined = <p><i class='fa-regular fa-clock'></i>  Joined On Aug 30, 2020</p>;
+const joined = <p style={{fontSize: '80%', fontFamily: 'Rubik, sans-serif'}}><i className='fa-regular fa-clock'></i>  Joined On Aug 30, 2020</p>;
 
 const techsWrapperStyles = {
-  display: 'flex',
-  flexDirection: 'row',
-  gap: '1%'
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, 100px',
+  gridAutoRows: '40px',
+  gridAutoColumns: '1fr',
+  gridAutoFlow: 'dense',
+  gap: '10px 1%',
 }
 
 const main = (
-  <div class='mainWrapper'>
+  <div className='mainWrapper'>
     {skillsTxt}
-    <div class='techsWrapper' style={techsWrapperStyles}>
+    <div className='techsWrapper' style={techsWrapperStyles}>
       {techsFormatted}
     </div>
     {joined}
@@ -52,7 +57,7 @@ const main = (
 );
 
 const app = (
-  <div>
+  <div className='appWrapper' style={{padding: '3% 2%'}}>
     {header}
     {main}
   </div>
