@@ -39,7 +39,7 @@ const joined = <p style={{fontSize: '80%', fontFamily: 'Rubik, sans-serif'}}><i 
 
 const techsWrapperStyles = {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, 100px',
+  gridTemplateColumns: 'repeat(auto-fill, 100px)',
   gridAutoRows: '40px',
   gridAutoColumns: '1fr',
   gridAutoFlow: 'dense',
